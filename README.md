@@ -29,7 +29,7 @@ from adjacent import get_connection_parameters
 params = get_connection_parameters(user)
 ```
 
-2) Function to send messages into Centrifuge
+2) Client wrapper to send messages into Centrifuge
 
 ```python
 from adjacent import Client
