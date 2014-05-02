@@ -12,10 +12,12 @@ Add `adjacent` into INSTALLED_APPS
 
 Add some settings to your `settings.py` file:
 
+```python
 CENTRIFUGE_ADDRESS = 'http://centrifuge.example.com'
 CENTRIFUGE_PROJECT_ID = 'your project ID from Centrifuge'
 CENTRIFUGE_PROJECT_SECRET = 'your project secret key from Centrifuge'
 CENTRIFUGE_TIMEOUT = 10
+```
 
 After this you get the follows:
 
