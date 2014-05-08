@@ -1,7 +1,6 @@
 # coding: utf-8
 from django.conf import settings
 from cent.core import Client as RawClient
-from cent.core import generate_token
 
 
 class Client(object):

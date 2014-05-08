@@ -52,17 +52,3 @@ Client methods:
 * `client.presence` - `channel`
 * `client.history` - `channel`
 
-
-3) Template tag to generate HTML elements with connection parameters (suitable for use with Centrifuge jQuery plugin):
-
-```
-{% load adjacent_tags %}
-
-{% centrifuge_html %}
-```
-
-And you will get something like this:
-
-```html
-
-```
