@@ -6,7 +6,7 @@ from cent.core import generate_token
 
 def get_connection_parameters(user, user_info=None, websocket=False):
     timestamp = str(int(time.time()))
-    user_pk = str(user.pk) if user.is_authenticated else ""
+    user_pk = str(user.pk) if user.is_authenticated() else ""
     token = generate_token(
         settings.CENTRIFUGE_PROJECT_SECRET,
         settings.CENTRIFUGE_PROJECT_ID,
