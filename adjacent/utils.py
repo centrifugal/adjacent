@@ -4,7 +4,7 @@ from django.conf import settings
 from cent.core import generate_token
 
 
-def get_connection_parameters(user, user_info=None, websocket=False):
+def get_connection_parameters(user, user_info=None):
     timestamp = str(int(time.time()))
     user_pk = str(user.pk) if user.is_authenticated() else ""
     token = generate_token(
@@ -14,11 +14,12 @@ def get_connection_parameters(user, user_info=None, websocket=False):
         timestamp,
         user_info=user_info
     )
-    connection_path = '/connection' if not websocket else '/connection/websocket'
     return {
-        'url': settings.CENTRIFUGE_ADDRESS + connection_path,
+        'sockjs_endpoint': settings.CENTRIFUGE_ADDRESS + '/connection',
+        'ws_endpoint': settings.CENTRIFUGE_ADDRESS + '/connection/websocket',
         'user': user_pk,
         'project': settings.CENTRIFUGE_PROJECT_ID,
         'timestamp': timestamp,
-        'token': token
+        'token': token,
+        'user_info': user_info
     }
