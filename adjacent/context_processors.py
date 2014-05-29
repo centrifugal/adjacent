@@ -6,9 +6,11 @@ def main(request):
     params = get_connection_parameters(request.user)
 
     return dict(
-        CENTRIFUGE_URL=params['url'],
+        CENTRIFUGE_SOCKJS_ENDPOINT=params['sockjs_endpoint'],
+        CENTRIFUGE_WS_ENDPOINT=params['ws_endpoint'],
         CENTRIFUGE_USER=params['user'],
         CENTRIFUGE_PROJECT=params['project'],
         CENTRIFUGE_TIMESTAMP=params['timestamp'],
-        CENTRIFUGE_TOKEN=params['token']
+        CENTRIFUGE_TOKEN=params['token'],
+        CENTRIFUGE_USER_INFO=params['user_info']
     )
