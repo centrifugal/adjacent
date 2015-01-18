@@ -5,14 +5,15 @@ from cent.core import Client as RawClient
 
 class Client(object):
 
-    def __init__(self, address=None, project_id=None, secret_key=None, timeout=10):
+    def __init__(self, address=None, project_id=None, secret_key=None, timeout=10, json_encoder=None):
         self.address = address or settings.CENTRIFUGE_ADDRESS
         self.project_id = project_id or settings.CENTRIFUGE_PROJECT_ID
         self.secret_key = secret_key or settings.CENTRIFUGE_PROJECT_SECRET
         self.timeout = timeout or settings.CENTRIFUGE_TIMEOUT
         self.api_address = self.address + '/api'
         self._client = RawClient(
-            self.api_address, self.project_id, self.secret_key, timeout=self.timeout
+            self.api_address, self.project_id, self.secret_key,
+            timeout=self.timeout, json_encoder=json_encoder
         )
 
     def publish(self, channel, data):
