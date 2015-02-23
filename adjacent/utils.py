@@ -4,7 +4,7 @@ from django.conf import settings
 from cent.core import generate_token
 
 
-def get_connection_parameters(user, user_info=None):
+def get_connection_parameters(user, info=None):
     timestamp = str(int(time.time()))
     user_pk = str(user.pk) if user.is_authenticated() else ""
     token = generate_token(
@@ -12,7 +12,7 @@ def get_connection_parameters(user, user_info=None):
         settings.CENTRIFUGE_PROJECT_ID,
         user_pk,
         timestamp,
-        user_info=user_info
+        info=info
     )
     return {
         'sockjs_endpoint': settings.CENTRIFUGE_ADDRESS + '/connection',
@@ -21,5 +21,5 @@ def get_connection_parameters(user, user_info=None):
         'project': settings.CENTRIFUGE_PROJECT_ID,
         'timestamp': timestamp,
         'token': token,
-        'user_info': user_info
+        'info': info
     }
