@@ -12,5 +12,5 @@ def main(request):
         CENTRIFUGE_PROJECT=params['project'],
         CENTRIFUGE_TIMESTAMP=params['timestamp'],
         CENTRIFUGE_TOKEN=params['token'],
-        CENTRIFUGE_USER_INFO=params['user_info']
+        CENTRIFUGE_INFO=params['info']
     )
