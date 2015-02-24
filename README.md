@@ -1,5 +1,3 @@
-This is a work in progress
-
 Centrifuge integration with Django framework.
 
 Installation:
