@@ -9,7 +9,7 @@ def get_connection_parameters(user, info=None):
     user_pk = str(user.pk) if user.is_authenticated() else ""
     token = generate_token(
         settings.CENTRIFUGE_PROJECT_SECRET,
-        settings.CENTRIFUGE_PROJECT_ID,
+        settings.CENTRIFUGE_PROJECT_KEY,
         user_pk,
         timestamp,
         info=info
@@ -18,7 +18,7 @@ def get_connection_parameters(user, info=None):
         'sockjs_endpoint': settings.CENTRIFUGE_ADDRESS + '/connection',
         'ws_endpoint': settings.CENTRIFUGE_ADDRESS + '/connection/websocket',
         'user': user_pk,
-        'project': settings.CENTRIFUGE_PROJECT_ID,
+        'project': settings.CENTRIFUGE_PROJECT_KEY,
         'timestamp': timestamp,
         'token': token,
         'info': info
