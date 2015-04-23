@@ -10,7 +10,7 @@ class Client(object):
         self.project_key = key or settings.CENTRIFUGE_PROJECT_KEY
         self.project_secret = secret or settings.CENTRIFUGE_PROJECT_SECRET
         self.timeout = timeout or settings.CENTRIFUGE_TIMEOUT
-        self.api_address = self.address + '/api'
+        self.api_address = self.address.rstrip('/') + '/api'
         self._client = RawClient(
             self.api_address, self.project_key, self.project_secret,
             timeout=self.timeout, json_encoder=json_encoder
