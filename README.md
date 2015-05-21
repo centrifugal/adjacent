@@ -12,7 +12,7 @@ Add some settings to your `settings.py` file:
 
 ```python
 CENTRIFUGE_ADDRESS = 'http://centrifuge.example.com'
-CENTRIFUGE_PROJECT_ID = 'your project ID from Centrifuge'
+CENTRIFUGE_PROJECT_KEY = 'your project key from Centrifuge'
 CENTRIFUGE_PROJECT_SECRET = 'your project secret key from Centrifuge'
 CENTRIFUGE_TIMEOUT = 10
 ```
