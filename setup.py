@@ -8,7 +8,7 @@ if sys.argv[-1] == 'test':
     sys.exit(1 if status > 127 else status)
 
 
-requirements = ['cent>=0.3.0']
+requirements = ['cent>=0.4.0']
 
 
 def long_description():
@@ -17,7 +17,7 @@ def long_description():
 
 setup(
     name='adjacent',
-    version='0.1.0',
+    version='0.2.0',
     description="Centrifuge integration with Django framework",
     long_description=long_description(),
     url='https://github.com/centrifugal/adjacent',
