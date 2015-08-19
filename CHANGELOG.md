@@ -1,3 +1,8 @@
+0.2.1
+=====
+
+* [fix](https://github.com/thinkwelldesigns/adjacent/commit/4ed48d45fb43a355be631ac83e0054a791174b6e) for default info for generated connection parameters – use empty string instead of `None`
+
 0.2.0
 =====
 

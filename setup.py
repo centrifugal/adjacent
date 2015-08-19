@@ -17,7 +17,7 @@ def long_description():
 
 setup(
     name='adjacent',
-    version='0.2.0',
+    version='0.2.1',
     description="Centrifuge integration with Django framework",
     long_description=long_description(),
     url='https://github.com/centrifugal/adjacent',
