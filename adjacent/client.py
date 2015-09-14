@@ -43,5 +43,8 @@ class Client(object):
             "channel": channel
         })
 
+    def channels(self):
+        self._client.add("channels", {})
+
     def send(self):
         return self._client.send()
