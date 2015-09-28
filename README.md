@@ -1,4 +1,4 @@
-Centrifuge integration with Django framework.
+Centrifugo server integration with Django framework.
 
 Installation:
 
@@ -12,8 +12,7 @@ Add some settings to your `settings.py` file:
 
 ```python
 CENTRIFUGE_ADDRESS = 'http://centrifuge.example.com'
-CENTRIFUGE_PROJECT_KEY = 'your project key from Centrifuge'
-CENTRIFUGE_PROJECT_SECRET = 'your project secret key from Centrifuge'
+CENTRIFUGE_SECRET = 'your secret key from Centrifugo'
 CENTRIFUGE_TIMEOUT = 10
 ```
 
@@ -44,9 +43,10 @@ response = client.send()
 
 Client methods:
 
-* `client.publish` - `channel`, `data`
-* `client.disconnect` - `user`
-* `client.unsubscribe` - `user`, `channel`
-* `client.presence` - `channel`
-* `client.history` - `channel`
+* `client.publish(channel, data)`
+* `client.disconnect(user)`
+* `client.unsubscribe(user, channel)`
+* `client.presence(channel)`
+* `client.history(channel)`
+* `client.channels()`
 

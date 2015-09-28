@@ -5,14 +5,13 @@ from cent.core import Client as RawClient
 
 class Client(object):
 
-    def __init__(self, address=None, key=None, secret=None, timeout=10, json_encoder=None):
+    def __init__(self, address=None, secret=None, timeout=10, json_encoder=None):
         self.address = address or settings.CENTRIFUGE_ADDRESS
-        self.project_key = key or settings.CENTRIFUGE_PROJECT_KEY
-        self.project_secret = secret or settings.CENTRIFUGE_PROJECT_SECRET
+        self.secret = secret or settings.CENTRIFUGE_SECRET
         self.timeout = timeout or settings.CENTRIFUGE_TIMEOUT
         self.api_address = self.address
         self._client = RawClient(
-            self.api_address, self.project_key, self.project_secret,
+            self.api_address, self.secret,
             timeout=self.timeout, json_encoder=json_encoder
         )
 
