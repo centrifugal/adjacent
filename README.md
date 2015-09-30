@@ -50,3 +50,18 @@ Client methods:
 * `client.presence` - `channel`
 * `client.history` - `channel`
 
+In template
+===========
+
+When you passed connection parameters to template you can initialize Centrifuge javascript object in this way:
+
+```javascript
+var centrifuge = new Centrifuge({
+    url: '{{ params.sockjs_endpoint }}',
+    project: '{{ params.project }}',
+    user: '{{ params.user }}',
+    timestamp: '{{ params.timestamp }}',
+    info: '{{ params.info|safe }}',
+    token: '{{ params.token }}'
+});
+```
