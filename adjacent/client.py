@@ -15,11 +15,14 @@ class Client(object):
             timeout=self.timeout, json_encoder=json_encoder
         )
 
-    def publish(self, channel, data):
-        self._client.add("publish", {
+    def publish(self, channel, data, client=None):
+        params = {
             "channel": channel,
             "data": data
-        })
+        }
+        if client:
+            params["client"] = client
+        self._client.add("publish", params)
 
     def unsubscribe(self, user, channel=None):
         params = {"user": user}
