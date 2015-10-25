@@ -1,3 +1,20 @@
+1.0.0
+=====
+
+* support for Centrifugo 1.0.0
+
+This means that no more project key required.
+
+Just set:
+
+```
+CENTRIFUGE_ADDRESS = 'http://centrifuge.example.com'
+CENTRIFUGE_SECRET = 'your secret key from Centrifugo'
+CENTRIFUGE_TIMEOUT = 10
+```
+
+And you are done.
+
 0.3.0
 =====
 
