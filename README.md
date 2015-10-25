@@ -43,10 +43,11 @@ response = client.send()
 
 Client methods:
 
-* `client.publish(channel, data)`
+* `client.publish(channel, data, client=None)`
 * `client.disconnect(user)`
 * `client.unsubscribe(user, channel)`
 * `client.presence(channel)`
 * `client.history(channel)`
 * `client.channels()`
+* `client.stats()`
 
