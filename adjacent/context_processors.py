@@ -9,7 +9,6 @@ def main(request):
         CENTRIFUGE_SOCKJS_ENDPOINT=params['sockjs_endpoint'],
         CENTRIFUGE_WS_ENDPOINT=params['ws_endpoint'],
         CENTRIFUGE_USER=params['user'],
-        CENTRIFUGE_PROJECT=params['project'],
         CENTRIFUGE_TIMESTAMP=params['timestamp'],
         CENTRIFUGE_TOKEN=params['token'],
         CENTRIFUGE_INFO=params['info']
