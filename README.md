@@ -59,7 +59,6 @@ When you passed connection parameters to template you can initialize Centrifuge 
 ```javascript
 var centrifuge = new Centrifuge({
     url: '{{ params.sockjs_endpoint }}',
-    project: '{{ params.project }}',
     user: '{{ params.user }}',
     timestamp: '{{ params.timestamp }}',
     info: '{{ params.info|safe }}',
