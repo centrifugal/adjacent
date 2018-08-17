@@ -5,7 +5,7 @@ from cent.core import generate_token
 
 
 # In django.VERSION >= (1, 10) user.is_authenticated is not callable anymore
-def is_authenticated(user):
+def _is_authenticated(user):
     if callable(user.is_authenticated):
         return user.is_authenticated()
     return user.is_authenticated
@@ -13,7 +13,7 @@ def is_authenticated(user):
 
 def get_connection_parameters(user, info=''):
     timestamp = str(int(time.time()))
-    user_pk = str(user.pk) if is_authenticated(user) else ""
+    user_pk = str(user.pk) if _is_authenticated(user) else ""
     token = generate_token(
         settings.CENTRIFUGE_SECRET,
         user_pk,

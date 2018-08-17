@@ -1,3 +1,8 @@
+1.1.0
+=====
+
+* Django 2.0 compatibility - see [#6](https://github.com/centrifugal/adjacent/pull/6)
+
 1.0.0
 =====
 
